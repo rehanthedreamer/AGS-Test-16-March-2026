@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: 10f31bc985b6042f49ebbb9835c039c1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_0
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1335
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ef0c78e3693483180bbd405ff85949
+      internalID: 1769391597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_1
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1346
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b931636f2c241a59d504f63fd13190
+      internalID: -1536371242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_2
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1332
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ccd88ce4ba64f458db2a41641886fd
+      internalID: 110608279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_3
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1378
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8dc67ce059d451cadbc6ef6304c520
+      internalID: -1038120590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_4
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 1353
+        width: 109
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbfa609478134957be83ea8bf006391
+      internalID: 97770442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 1038
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdeed9681e83845bda7343364423c1ff
+      internalID: -815341008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 1074
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4692698f6daab4a8dac6c02e7e6f3b93
+      internalID: -1026763668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_7
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1063
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9154ddfa7adce4ac0b442095834727d1
+      internalID: -1072660486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_8
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1045
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e497f8c7e33cc4186a1ef3977754ef75
+      internalID: -1635184575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_9
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 989
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda2eab9b992841f8ac859d39f18d584
+      internalID: -1439853035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_10
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 773
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7326696ac6038418d9c11b5cd4ee8e7f
+      internalID: 1573557731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_11
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 797
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c12793791b24741bc06ae816d6b2e4
+      internalID: -335474301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_12
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 787
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf37b45a1118f4afa996563b469679c5
+      internalID: 801241144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_13
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 805
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdeb1b522581488c8c8ae8a04dc3c32
+      internalID: 283682707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 500
+        width: 200
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24e1f0bc61ef44c8a1fc8ff63ed209f
+      internalID: 1036384053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_15
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 493
+        width: 200
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5deb96d3beac74128940484757141b2b
+      internalID: -908539497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_16
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 507
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611c114b0a2d9484ea2d84d0f568a498
+      internalID: 1201935159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_17
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 512
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea3dbe70a3e3430684f721f3a13642d
+      internalID: 1470656399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_18
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 224
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae0d3fc7cb7745e4b2c68a8f3111262
+      internalID: -788461422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_19
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 193
+        width: 193
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b362f772293ed4e4095776ffb4d2d04e
+      internalID: 111875982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_0: 1769391597
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_1: -1536371242
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_10: 1573557731
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_11: -335474301
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_12: 801241144
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_13: 283682707
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_14: 1036384053
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_15: -908539497
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_16: 1201935159
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_17: 1470656399
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_18: -788461422
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_19: 111875982
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_2: 110608279
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_3: -1038120590
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_4: 97770442
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_5: -815341008
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_6: -1026763668
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_7: -1072660486
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_8: -1635184575
+      vecteezy_25-thematic-vector-filled-line-flat-colors-and-editable_19270137_9: -1439853035
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
