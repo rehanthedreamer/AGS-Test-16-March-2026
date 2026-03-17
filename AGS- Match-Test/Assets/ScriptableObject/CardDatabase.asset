@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff93338d5e44a452987ba61c9fec7886, type: 3}
+  m_Name: CardDatabase
+  m_EditorClassIdentifier: 
+  cards:
+  - id: 0
+    category: 2
+    icon: {fileID: -1266246147, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 1
+    category: 2
+    icon: {fileID: -211557267, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 2
+    category: 2
+    icon: {fileID: -1784354957, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 4
+    category: 2
+    icon: {fileID: -1907661205, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 5
+    category: 2
+    icon: {fileID: -422806355, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 6
+    category: 2
+    icon: {fileID: 748324834, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 7
+    category: 2
+    icon: {fileID: 1604501192, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 8
+    category: 2
+    icon: {fileID: -1982631708, guid: fd6f112dd53234d78ab00d06901fe8f7, type: 3}
+  - id: 0
+    category: 0
+    icon: {fileID: 432888241, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 1
+    category: 0
+    icon: {fileID: 262012596, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 2
+    category: 0
+    icon: {fileID: 756015833, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 3
+    category: 0
+    icon: {fileID: -1430022059, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 4
+    category: 0
+    icon: {fileID: -1306896953, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 4
+    category: 0
+    icon: {fileID: -1344989108, guid: 546ec0e610e444bbb96f87141a8a0ead, type: 3}
+  - id: 0
+    category: 1
+    icon: {fileID: -1780479318, guid: 674524ced99d4479289d5587302f7de4, type: 3}
+  - id: 1
+    category: 1
+    icon: {fileID: 526940090, guid: 674524ced99d4479289d5587302f7de4, type: 3}
+  - id: 2
+    category: 1
+    icon: {fileID: -1491840242, guid: 674524ced99d4479289d5587302f7de4, type: 3}
+  - id: 3
+    category: 1
+    icon: {fileID: -262417248, guid: 674524ced99d4479289d5587302f7de4, type: 3}
+  - id: 4
+    category: 1
+    icon: {fileID: 1098484254, guid: 674524ced99d4479289d5587302f7de4, type: 3}

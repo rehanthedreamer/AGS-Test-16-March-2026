@@ -30,16 +30,16 @@ public class MatchSystem : MonoBehaviour
 
         if (a.cardID == b.cardID)
         {
-            a.SetMatched();
-            b.SetMatched();
+            // a.SetMatched();
+            // b.SetMatched();
 
             // ScoreSystem.Instance.AddScore(10);
             // AudioManager.Instance.PlayMatch();
         }
         else
         {
-            a.Flip();
-            b.Flip();
+            // a.Flip();
+            // b.Flip();
 
             // AudioManager.Instance.PlayMismatch();
         }
