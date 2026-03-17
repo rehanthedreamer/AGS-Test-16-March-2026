@@ -1,19 +1,144 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 
 public class CardView : MonoBehaviour
 {
+    [Header("References")]
+    public GameObject front;
+    public GameObject back;
+    public SpriteRenderer frontIcon;
+
+    [Header("Settings")]
+    public float flipDuration = 0.2f;
+
+    // Data
     public int cardID;
 
-    public SpriteRenderer iconRenderer;
+    // States
+    public bool isFlipped = false;
+    public bool isMatched = false;
 
-    CardItem data;
+    public static bool IsInputLocked = false;
 
-    public void SetData(CardItem item)
+    bool isAnimating = false;
+
+    // -----------------------------
+    // SETUP (called from Spawner)
+    // -----------------------------
+    public void Setup(CardItem cardItem)
     {
-        data = item;
-        cardID = item.id;
+        
+        cardID = cardItem.id;
+        frontIcon.sprite = cardItem.icon;
 
-        iconRenderer.sprite = item.icon;
+        isFlipped = false;
+        isMatched = false;
+
+        // SetInstantBack();
+    }
+
+    // -----------------------------
+    // CLICK HANDLER
+    // -----------------------------
+    void OnMouseDown()
+    {
+        if (IsInputLocked) return;
+        if (isFlipped || isMatched || isAnimating) return;
+
+        Flip();
+
+        // Notify match system
+        MatchSystem.Instance.RegisterFlip(this);
+    }
+
+    // -----------------------------
+    // FLIP ANIMATION
+    // -----------------------------
+    public void Flip()
+    {
+        if (isAnimating) return;
+
+        StartCoroutine(FlipRoutine());
+    }
+
+    IEnumerator FlipRoutine()
+    {
+        isAnimating = true;
+
+        float t = 0;
+        float startY = transform.eulerAngles.y;
+        float targetY = startY + 180f;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime / flipDuration;
+
+            float yRotation = Mathf.Lerp(startY, targetY, t);
+            transform.rotation = Quaternion.Euler(0, yRotation, 0);
+
+            // Switch visuals at half flip
+            if (t >= 0.5f)
+            {
+                front.SetActive(!isFlipped);
+                back.SetActive(isFlipped);
+            }
+
+            yield return null;
+        }
+
+        transform.rotation = Quaternion.Euler(0, targetY, 0);
+
+        isFlipped = !isFlipped;
+        isAnimating = false;
+    }
+
+    // -----------------------------
+    // FORCE STATES (NO ANIMATION)
+    // -----------------------------
+    public void SetInstantFront()
+    {
+        isFlipped = true;
+        front.SetActive(true);
+        back.SetActive(false);
+        transform.rotation = Quaternion.Euler(0, 180f, 0);
+    }
+
+    public void SetInstantBack()
+    {
+        isFlipped = false;
+        front.SetActive(false);
+        back.SetActive(true);
+        transform.rotation = Quaternion.Euler(0, 0f, 0);
+    }
+
+    // -----------------------------
+    // MATCHED STATE
+    // -----------------------------
+    public void SetMatched()
+    {
+        isMatched = true;
+
+        // Optional: disable collider
+        GetComponent<Collider2D>().enabled = false;
+
+        // Optional: add small scale effect
+        StartCoroutine(MatchEffect());
+    }
+
+    IEnumerator MatchEffect()
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * 1.1f;
+
+        float t = 0;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime * 5f;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            yield return null;
+        }
+
+        transform.localScale = originalScale;
     }
 }

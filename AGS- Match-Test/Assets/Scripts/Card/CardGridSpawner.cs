@@ -1,32 +1,57 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+
 
 public class CardGridSpawner : MonoBehaviour
 {
     public int rows = 4;
     public int columns = 4;
-
     [Header("Container Size")]
-    public float containerWidth = 8f;
-    public float containerHeight = 8f;
+     float containerWidth = 8f;
+     float containerHeight = 8f;
 
     [Header("Spacing")]
-    public float spacing = 0.3f;
+    public float spacing = 0.2f;
 
     public CardDatabase database;
     public CardCategory selectedCategory;
     List<CardItem> selectedCards;
 
     List<GameObject> activeCards = new List<GameObject>();
-    List<int> cardIDs = new List<int>();
 
     void Start()
     {
-        GenerateGrid();
+        
+    }
+
+   public void ApplyDifficultyToGrid()
+    {
+        switch (PersistentDataManager.Instance.GetDifficulty())
+        {
+            case 1:
+                SetGrid(2,2);
+                break;
+
+            case 2:
+                SetGrid(2,3);
+                break;
+
+            case 3:
+                SetGrid(5,6);
+                break;
+            case 4:
+                 SetGrid(6,6);
+                break;
+                case 5:
+                 SetGrid(6,8);
+                break;
+        }
     }
 
     public void GenerateGrid()
     {
+        ClearGrid();
         selectedCards = database.GetByCategory(selectedCategory);
         int pairCount = (rows * columns) / 2;
         List<CardItem> finalList = new List<CardItem>();
@@ -71,13 +96,16 @@ public class CardGridSpawner : MonoBehaviour
                 card.transform.localScale = Vector3.one * cardSize;
 
                 CardView view = card.GetComponent<CardView>();
-                view.SetData(finalList[index]);
+                view.Setup(finalList[index]);
                 activeCards.Add(card);
 
                 index++;
             }
         }
+
+        StartCoroutine(PreviewAndHideCards());
     }
+    
 
     void ClearGrid()
     {
@@ -98,11 +126,40 @@ public class CardGridSpawner : MonoBehaviour
         }
     }
 
+
+
     public void SetGrid(int r, int c)
     {
         rows = r;
         columns = c;
-
         GenerateGrid();
     }
+
+
+IEnumerator PreviewAndHideCards()
+{
+    CardView.IsInputLocked = true;
+
+    foreach (var card in activeCards)
+    {
+        CardView view = card.GetComponent<CardView>();
+
+        if (!view.isFlipped)
+            view.Flip();
+    }
+
+    yield return new WaitForSeconds(3f);
+
+    foreach (var card in activeCards)
+    {
+        CardView view = card.GetComponent<CardView>();
+
+        if (view.isFlipped && !view.isMatched)
+            view.Flip();
+    }
+
+    yield return new WaitForSeconds(0.3f); // wait for animation    
+    CardView.IsInputLocked = false;
+}
+    
 }

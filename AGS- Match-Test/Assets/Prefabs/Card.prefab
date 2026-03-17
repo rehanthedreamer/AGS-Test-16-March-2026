@@ -181,8 +181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5d977b8b32d41e2a8b379ff436a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  front: {fileID: 0}
+  back: {fileID: 0}
+  frontIcon: {fileID: 0}
+  flipDuration: 0.2
   cardID: 0
-  iconRenderer: {fileID: 0}
+  isFlipped: 0
+  isMatched: 0
 --- !u!1 &7731124103029015038
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7643698832405719796}
   - component: {fileID: 6818843818398481593}
+  - component: {fileID: 819152322331068044}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -229,8 +235,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5d977b8b32d41e2a8b379ff436a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  front: {fileID: 8817230066110926007}
+  back: {fileID: 3533848132813474752}
+  frontIcon: {fileID: 8278002666191988724}
+  flipDuration: 0.2
   cardID: 0
-  iconRenderer: {fileID: 8278002666191988724}
+  isFlipped: 0
+  isMatched: 0
+--- !u!61 &819152322331068044
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7731124103029015038}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.67, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8817230066110926007
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,5 +366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5d977b8b32d41e2a8b379ff436a201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  front: {fileID: 0}
+  back: {fileID: 0}
+  frontIcon: {fileID: 0}
+  flipDuration: 0.2
   cardID: 0
-  iconRenderer: {fileID: 0}
+  isFlipped: 0
+  isMatched: 0
