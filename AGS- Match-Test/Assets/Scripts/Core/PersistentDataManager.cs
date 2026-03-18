@@ -22,9 +22,7 @@ public class PersistentDataManager : MonoBehaviour
         }
     }
 
-    // -----------------------------
     // SAVE
-    // -----------------------------
 
     public void Save()
     {
@@ -33,9 +31,7 @@ public class PersistentDataManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // -----------------------------
     // LOAD
-    // -----------------------------
 
     public void Load()
     {
@@ -51,9 +47,7 @@ public class PersistentDataManager : MonoBehaviour
         }
     }
 
-    // -----------------------------
     // DEFAULT DATA
-    // -----------------------------
 
     SaveData GetDefaultData()
     {
@@ -67,9 +61,7 @@ public class PersistentDataManager : MonoBehaviour
         };
     }
 
-    // -----------------------------
-    // SETTERS (Clean API)
-    // -----------------------------
+ 
 
     public void SetDifficulty(int value)
     {

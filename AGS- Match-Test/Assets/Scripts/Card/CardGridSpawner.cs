@@ -46,7 +46,7 @@ public class CardGridSpawner : MonoBehaviour
                  SetGrid(6,6);
                 break;
                 case 5:
-                 SetGrid(6,8);
+                 SetGrid(6,7);
                 break;
         }
     }
@@ -115,7 +115,6 @@ public class CardGridSpawner : MonoBehaviour
         {
             CardPool.Instance.ReturnToPool(card);
         }
-
         activeCards.Clear();
     }
 
@@ -162,7 +161,7 @@ public class CardGridSpawner : MonoBehaviour
         CardView.IsInputLocked = false;
     }
 
-    public void OnCardRemoved()
+    public void OnCardRemovedFromGrid()
     {
         remainingCards--;
         if(remainingCards <= 0)

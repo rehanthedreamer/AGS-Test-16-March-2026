@@ -18,7 +18,6 @@ public class AudioManager : MonoBehaviour
 
     const string MUSIC_VOL = "MUSIC_VOL";
     const string SFX_VOL = "SFX_VOL";
-    const string MUTE_KEY = "MUTE";
 
     bool isMuted;
 
@@ -111,16 +110,6 @@ public class AudioManager : MonoBehaviour
     }
 
     // MUTE
-
-    public void ToggleMute()
-    {
-        isMuted = !isMuted;
-
-        musicSource.mute = isMuted;
-        sfxSource.mute = isMuted;
-
-        PlayerPrefs.SetInt(MUTE_KEY, isMuted ? 1 : 0);
-    }
 
     public bool IsMuted()
     {

@@ -26,13 +26,11 @@ public class CardView : MonoBehaviour
     bool isAnimating = false;
 
 
-public void Init(CardPool poolRef)
+    public void Init(CardPool poolRef)
     {
         pool = poolRef;
     }
-    // -----------------------------
     // SETUP (called from Spawner)
-    // -----------------------------
     public void Setup(CardItem cardItem)
     {
         
@@ -42,12 +40,9 @@ public void Init(CardPool poolRef)
         isFlipped = false;
         isMatched = false;
         
-        // SetInstantBack();
     }
 
-    // -----------------------------
     // CLICK HANDLER
-    // -----------------------------
     void OnMouseDown()
     {
         if (IsInputLocked) return;
@@ -58,9 +53,7 @@ public void Init(CardPool poolRef)
         MatchSystem.Instance.RegisterFlip(this);
     }
 
-    // -----------------------------
     // FLIP ANIMATION
-    // -----------------------------
     public void Flip()
     {
         if (isAnimating) return;
@@ -74,7 +67,7 @@ public void Init(CardPool poolRef)
         float t = 0;
         float startY = transform.eulerAngles.y;
         float targetY = startY + 180f;
-
+        AudioManager.Instance.PlaySFX("_cardFlip");
         while (t < 1)
         {
             t += Time.deltaTime / flipDuration;
@@ -136,9 +129,14 @@ public void Init(CardPool poolRef)
         sequence.AppendInterval(.2f).
         Append(transform.DOScale(Vector3.zero, .2f)).OnComplete(()=>
         {
-            pool.ReturnToPool(this);
-            CardGridSpawner.Instance.OnCardRemoved();
+            ReturnToPool();
+            CardGridSpawner.Instance.OnCardRemovedFromGrid();
         }
         );
+    }
+
+    public void ReturnToPool()
+    {
+        pool.ReturnToPool(this);
     }
 }

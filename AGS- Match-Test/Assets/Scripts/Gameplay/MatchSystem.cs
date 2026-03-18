@@ -36,6 +36,7 @@ public class MatchSystem : MonoBehaviour
             b.SetMatched();
             flippedCards.Remove(a);
             flippedCards.Remove(b);
+          yield return StartCoroutine(FlipBackOthers());
             ScoreManager.Instance.OnMatch();
             ScoreManager.Instance.AddMatch(1);
             ScoreManager.Instance.AddTurn(1);
@@ -45,11 +46,29 @@ public class MatchSystem : MonoBehaviour
         {
             a.Flip();
             b.Flip();
-            flippedCards.Remove(a);
-            flippedCards.Remove(b);
+            // flippedCards.Remove(a);
+            // flippedCards.Remove(b);
             ScoreManager.Instance.OnMismatch();
             ScoreManager.Instance.AddTurn(1);
             AudioManager.Instance.PlaySFX("_cardMismatched");
         }
+    }
+
+    IEnumerator FlipBackOthers()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        List<CardView> temp = new List<CardView>(flippedCards);
+
+        foreach (var card in temp)
+        {
+            if (!card.isMatched && card.isFlipped)
+            {
+                card.Flip();
+                flippedCards.Remove(card);
+            }
+        }
+
+        flippedCards.Clear();
     }
 }

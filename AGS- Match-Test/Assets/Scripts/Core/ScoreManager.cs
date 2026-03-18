@@ -22,9 +22,7 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
-    // -----------------------------
     // ADD SCORE
-    // -----------------------------
       public void OnMatch()
     {
         comboCount++;
@@ -56,9 +54,7 @@ public class ScoreManager : MonoBehaviour
         OnTurnChanged?.Invoke(Turn);
     }
 
-    // -----------------------------
     // CALL ON MISMATCH
-    // -----------------------------
     public void OnMismatch()
     {
         comboCount = 0;
@@ -73,9 +69,7 @@ public class ScoreManager : MonoBehaviour
         OnTurnChanged?.Invoke(Turn);
     }
 
-    // -----------------------------
     // LOAD SAVED SCORE
-    // -----------------------------
     public void LoadScore()
     {
         Score = PersistentDataManager.Instance.GetScore();

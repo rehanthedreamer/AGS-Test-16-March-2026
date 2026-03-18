@@ -38,6 +38,7 @@ public class CardPool : MonoBehaviour
 
         CardView card = pool.Dequeue();
         card.gameObject.SetActive(true);
+        card.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         return card;
     }
 
