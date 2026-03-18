@@ -40,13 +40,13 @@ public class CardGridSpawner : MonoBehaviour
                 break;
 
             case 3:
-                SetGrid(5,6);
+                SetGrid(4,4);
                 break;
             case 4:
-                 SetGrid(6,6);
+                 SetGrid(5,6);
                 break;
                 case 5:
-                 SetGrid(6,7);
+                 SetGrid(6,6);
                 break;
         }
     }

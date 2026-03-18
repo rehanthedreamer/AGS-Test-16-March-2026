@@ -46,8 +46,8 @@ public class MatchSystem : MonoBehaviour
         {
             a.Flip();
             b.Flip();
-            // flippedCards.Remove(a);
-            // flippedCards.Remove(b);
+            flippedCards.Remove(a);
+            flippedCards.Remove(b);
             ScoreManager.Instance.OnMismatch();
             ScoreManager.Instance.AddTurn(1);
             AudioManager.Instance.PlaySFX("_cardMismatched");

@@ -47,6 +47,7 @@ public class GameOverScreen : MonoBehaviour
         transform.DOScale(Vector3.one, .2f);
         AudioManager.Instance.PlaySFX("_gameOver");
         AudioManager.Instance.StopMusic();
+         CardGridSpawner.Instance.ClearGrid();
     }
 
     void CloseGameOverScreen()

@@ -37,6 +37,7 @@ public class HUD : MonoBehaviour
         menuScreen.DOScale(Vector3.one, .2f);
         AudioManager.Instance.PlaySFX("_btnPress");
         AudioManager.Instance.StopMusic();
+        CardGridSpawner.Instance.ClearGrid();
     }
 
     void UpdateScoreUI(int score)

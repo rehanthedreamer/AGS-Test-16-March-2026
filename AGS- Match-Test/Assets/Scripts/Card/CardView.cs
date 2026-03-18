@@ -39,7 +39,7 @@ public class CardView : MonoBehaviour
 
         isFlipped = false;
         isMatched = false;
-        
+        isAnimating = false;
     }
 
     // CLICK HANDLER
