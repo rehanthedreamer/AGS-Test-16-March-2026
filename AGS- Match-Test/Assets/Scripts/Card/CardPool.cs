@@ -50,5 +50,6 @@ public class CardPool : MonoBehaviour
         card.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
         card.GetComponent<Collider2D>().enabled = true;
         pool.Enqueue(card);
+        
     }
 }

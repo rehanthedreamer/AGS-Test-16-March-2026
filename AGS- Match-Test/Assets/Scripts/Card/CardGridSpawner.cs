@@ -147,7 +147,7 @@ public class CardGridSpawner : MonoBehaviour
                 view.Flip();
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         foreach (var card in activeCards)
         {
