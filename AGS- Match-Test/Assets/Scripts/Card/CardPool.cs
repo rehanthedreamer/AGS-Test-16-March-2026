@@ -7,7 +7,7 @@ public class CardPool : MonoBehaviour
     public CardView cardPrefab;
     public int initialSize = 20;
 
-    Queue<CardView> pool = new Queue<CardView>();
+    List<CardView> pool = new List<CardView>();
 
     void Awake()
     {
@@ -26,20 +26,21 @@ public class CardPool : MonoBehaviour
         CardView card = Instantiate(cardPrefab, transform);
         card.gameObject.SetActive(false);
         card.Init(this);
-
-        pool.Enqueue(card);
+        pool.Add(card);
         return card;
     }
 
     public CardView Get()
     {
-        if (pool.Count == 0)
-            CreateNew();
-
-        CardView card = pool.Dequeue();
-        card.gameObject.SetActive(true);
-        card.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        return card;
+       for (int i = 0; i < pool.Count; i++)
+       {
+        if(!pool[i].gameObject.activeInHierarchy)
+            {
+                pool[i].gameObject.SetActive(true);
+                return pool[i];
+            }
+        }
+        return CreateNew();
     }
 
     public void ReturnToPool(CardView card)
@@ -48,8 +49,7 @@ public class CardPool : MonoBehaviour
         // Reset state
         card.transform.localScale = Vector3.one;
         card.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        card.GetComponent<Collider2D>().enabled = true;
-        pool.Enqueue(card);
-        
+        card.transform.parent = transform;
+        card.GetComponent<Collider2D>().enabled = true;  
     }
 }
