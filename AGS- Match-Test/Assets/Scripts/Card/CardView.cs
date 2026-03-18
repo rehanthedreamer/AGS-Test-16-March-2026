@@ -134,8 +134,11 @@ public void Init(CardPool poolRef)
     {
         Sequence sequence = DOTween.Sequence();
         sequence.AppendInterval(.2f).
-        Append(transform.DOScale(Vector3.zero, .2f)).OnComplete(()=> 
-            pool.ReturnToPool(this)
+        Append(transform.DOScale(Vector3.zero, .2f)).OnComplete(()=>
+        {
+            pool.ReturnToPool(this);
+            CardGridSpawner.Instance.OnCardRemoved();
+        }
         );
     }
 }

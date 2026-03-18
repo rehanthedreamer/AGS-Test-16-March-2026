@@ -4,8 +4,7 @@ public enum CardCategory
 {
     Animals,
     Fruits,
-    Eatable,
-    Custom
+    Eatable
 }
 
 [System.Serializable]

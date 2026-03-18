@@ -20,7 +20,9 @@ public class CardGridSpawner : MonoBehaviour
     public CardCategory selectedCategory;
     List<CardItem> selectedCards;
     List<CardView> activeCards = new List<CardView>();
-    IEnumerator flipAllTheCard;
+
+    public int totalCards;
+    int remainingCards;
     void Awake()
     {
         Instance = this;
@@ -51,6 +53,9 @@ public class CardGridSpawner : MonoBehaviour
 
     public void GenerateGrid()
     {
+        // remaining card count
+        totalCards = rows * columns;
+        remainingCards = totalCards;
         ClearGrid();
         selectedCards = database.GetByCategory(selectedCategory);
         int pairCount = (rows * columns) / 2;
@@ -100,13 +105,7 @@ public class CardGridSpawner : MonoBehaviour
                 index++;
             }
         }
-        
-        if (flipAllTheCard != null)
-        {
-            StopCoroutine(flipAllTheCard);
-        }
-        flipAllTheCard = PreviewAndHideCards();
-        StartCoroutine(flipAllTheCard);
+        StartCoroutine(PreviewAndHideCards());
     }
     
 
@@ -129,8 +128,6 @@ public class CardGridSpawner : MonoBehaviour
         }
     }
 
-
-
     public void SetGrid(int r, int c)
     {
         rows = r;
@@ -139,30 +136,40 @@ public class CardGridSpawner : MonoBehaviour
     }
 
 
-IEnumerator PreviewAndHideCards()
-{
-    CardView.IsInputLocked = true;
-
-    foreach (var card in activeCards)
+    IEnumerator PreviewAndHideCards()
     {
-        CardView view = card.GetComponent<CardView>();
+        CardView.IsInputLocked = true;
 
-        if (!view.isFlipped)
-            view.Flip();
+        foreach (var card in activeCards)
+        {
+            CardView view = card.GetComponent<CardView>();
+
+            if (!view.isFlipped)
+                view.Flip();
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        foreach (var card in activeCards)
+        {
+            CardView view = card.GetComponent<CardView>();
+
+            if (view.isFlipped && !view.isMatched)
+                view.Flip();
+        }
+
+        yield return new WaitForSeconds(0.3f); // wait for animation    
+        CardView.IsInputLocked = false;
     }
 
-    yield return new WaitForSeconds(2f);
-
-    foreach (var card in activeCards)
+    public void OnCardRemoved()
     {
-        CardView view = card.GetComponent<CardView>();
-
-        if (view.isFlipped && !view.isMatched)
-            view.Flip();
+        remainingCards--;
+        if(remainingCards <= 0)
+        {
+            Debug.Log("Game Over");
+            GameOverScreen.OnGameOver?.Invoke();
+        }
     }
-
-    yield return new WaitForSeconds(0.3f); // wait for animation    
-    CardView.IsInputLocked = false;
-}
     
 }

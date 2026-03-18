@@ -40,6 +40,7 @@ public class MenuScreen : MonoBehaviour
         muteObj.SetActive(PersistentDataManager.Instance.GetMuteState());
         AudioManager.Instance.LoadSettings();
         ScoreManager.Instance.LoadScore();
+        GameOverScreen.OnCloseGameOverScreen?.Invoke();
     }
 
     void OnClickPlay()
@@ -49,6 +50,7 @@ public class MenuScreen : MonoBehaviour
         transform.DOScale(Vector3.zero, .2f);
         gameHUD.DOScale(Vector3.one, .1f);
         ScoreManager.Instance.ResetMatchNTurn();
+        GameOverScreen.OnCloseGameOverScreen?.Invoke();
         AudioManager.Instance.PlayMusic("_bgMusic");
     }
     void OnClickMusic()

@@ -32,7 +32,7 @@ public class CardDatabase : ScriptableObject
     public List<CardItem> GetByCategory(CardCategory category)
     {
         List<CardItem> result = new List<CardItem>();
-
+        category = GetRandomCategoryFromEnum();
         foreach (var card in cards)
         {
             if (card.category == category)
@@ -41,4 +41,10 @@ public class CardDatabase : ScriptableObject
 
         return result;
     }
+
+    public CardCategory GetRandomCategoryFromEnum()
+{
+    var values = System.Enum.GetValues(typeof(CardCategory));
+    return (CardCategory)values.GetValue(Random.Range(0, values.Length));
+}
 }
