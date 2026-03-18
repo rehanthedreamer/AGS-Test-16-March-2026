@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
+using UnityEngine.Pool;
 
 public class CardView : MonoBehaviour
 {
@@ -19,9 +21,15 @@ public class CardView : MonoBehaviour
     public bool isMatched = false;
 
     public static bool IsInputLocked = false;
+    CardPool pool;
 
     bool isAnimating = false;
 
+
+public void Init(CardPool poolRef)
+    {
+        pool = poolRef;
+    }
     // -----------------------------
     // SETUP (called from Spawner)
     // -----------------------------
@@ -33,7 +41,7 @@ public class CardView : MonoBehaviour
 
         isFlipped = false;
         isMatched = false;
-
+        
         // SetInstantBack();
     }
 
@@ -46,7 +54,6 @@ public class CardView : MonoBehaviour
         if (isFlipped || isMatched || isAnimating) return;
 
         Flip();
-
         // Notify match system
         MatchSystem.Instance.RegisterFlip(this);
     }
@@ -57,7 +64,6 @@ public class CardView : MonoBehaviour
     public void Flip()
     {
         if (isAnimating) return;
-
         StartCoroutine(FlipRoutine());
     }
 
@@ -75,7 +81,6 @@ public class CardView : MonoBehaviour
 
             float yRotation = Mathf.Lerp(startY, targetY, t);
             transform.rotation = Quaternion.Euler(0, yRotation, 0);
-
             // Switch visuals at half flip
             if (t >= 0.5f)
             {
@@ -92,9 +97,7 @@ public class CardView : MonoBehaviour
         isAnimating = false;
     }
 
-    // -----------------------------
     // FORCE STATES (NO ANIMATION)
-    // -----------------------------
     public void SetInstantFront()
     {
         isFlipped = true;
@@ -111,34 +114,28 @@ public class CardView : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0f, 0);
     }
 
-    // -----------------------------
     // MATCHED STATE
-    // -----------------------------
     public void SetMatched()
     {
         isMatched = true;
-
-        // Optional: disable collider
         GetComponent<Collider2D>().enabled = false;
-
-        // Optional: add small scale effect
-        StartCoroutine(MatchEffect());
+        MatchEffect();
     }
 
-    IEnumerator MatchEffect()
+    void MatchEffect()
     {
         Vector3 originalScale = transform.localScale;
-        Vector3 targetScale = originalScale * 1.1f;
+        transform.DOScale(originalScale*1.1f, .3f).OnComplete(()=> 
+            RemoveCard()
+        ); 
+    }
 
-        float t = 0;
-
-        while (t < 1)
-        {
-            t += Time.deltaTime * 5f;
-            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
-            yield return null;
-        }
-
-        transform.localScale = originalScale;
+    void RemoveCard()
+    {
+        Sequence sequence = DOTween.Sequence();
+        sequence.AppendInterval(.2f).
+        Append(transform.DOScale(Vector3.zero, .2f)).OnComplete(()=> 
+            pool.ReturnToPool(this)
+        );
     }
 }

@@ -13,6 +13,8 @@ public class MatchSystem : MonoBehaviour
         Instance = this;
     }
 
+   
+
     public void RegisterFlip(CardView card)
     {
         flippedCards.Add(card);
@@ -30,18 +32,24 @@ public class MatchSystem : MonoBehaviour
 
         if (a.cardID == b.cardID)
         {
-            // a.SetMatched();
-            // b.SetMatched();
-
-            // ScoreSystem.Instance.AddScore(10);
-            // AudioManager.Instance.PlayMatch();
+            a.SetMatched();
+            b.SetMatched();
+            flippedCards.Remove(a);
+            flippedCards.Remove(b);
+            ScoreManager.Instance.OnMatch();
+            ScoreManager.Instance.AddMatch(1);
+            ScoreManager.Instance.AddTurn(1);
+            AudioManager.Instance.PlaySFX("_cardMatched");
         }
         else
         {
-            // a.Flip();
-            // b.Flip();
-
-            // AudioManager.Instance.PlayMismatch();
+            a.Flip();
+            b.Flip();
+            flippedCards.Remove(a);
+            flippedCards.Remove(b);
+            ScoreManager.Instance.OnMismatch();
+            ScoreManager.Instance.AddTurn(1);
+            AudioManager.Instance.PlaySFX("_cardMismatched");
         }
     }
 }

@@ -50,26 +50,21 @@ public class AudioManager : MonoBehaviour
         LoadSettings();
     }
 
-    void LoadSettings()
+     public void LoadSettings()
     {
         float musicVol = PlayerPrefs.GetFloat(MUSIC_VOL, 1);
         float sfxVol = PlayerPrefs.GetFloat(SFX_VOL, 1);
 
-        isMuted = PlayerPrefs.GetInt(MUTE_KEY, 0) == 1;
+        isMuted = PersistentDataManager.Instance.GetMuteState();
 
         musicSource.volume = musicVol;
         sfxSource.volume = sfxVol;
 
-        if (isMuted)
-        {
-            musicSource.mute = true;
-            sfxSource.mute = true;
-        }
+        musicSource.mute = isMuted;
+      
     }
 
-    // -----------------------------
     // MUSIC
-    // -----------------------------
 
     public void PlayMusic(string id)
     {
@@ -89,9 +84,7 @@ public class AudioManager : MonoBehaviour
         musicSource.Stop();
     }
 
-    // -----------------------------
     // SFX
-    // -----------------------------
 
     public void PlaySFX(string id)
     {
@@ -103,9 +96,7 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(sound.clip, sound.volume);
     }
 
-    // -----------------------------
     // VOLUME
-    // -----------------------------
 
     public void SetMusicVolume(float volume)
     {
@@ -119,9 +110,7 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat(SFX_VOL, volume);
     }
 
-    // -----------------------------
     // MUTE
-    // -----------------------------
 
     public void ToggleMute()
     {

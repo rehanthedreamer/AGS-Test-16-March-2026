@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     [SerializeField]
-    TMP_Text scoreText, countText;
+    TMP_Text scoreText, matchText, trunText;
 
     [SerializeField]
     Button homeBtn;
@@ -18,11 +18,17 @@ public class HUD : MonoBehaviour
     void OnEnable()
     {
         homeBtn.onClick.AddListener(OnClickHomeBtn);
+        ScoreManager.OnScoreChanged += UpdateScoreUI;
+        ScoreManager.OnMatchChanged += UpdateMacthUI;
+        ScoreManager.OnTurnChanged += UpdateTurnUI;
     }
 
     void OnDisable()
     {
         homeBtn.onClick.RemoveListener(OnClickHomeBtn);
+        ScoreManager.OnScoreChanged -= UpdateScoreUI;
+        ScoreManager.OnMatchChanged -= UpdateMacthUI;
+        ScoreManager.OnTurnChanged -= UpdateTurnUI;
     }
 
     // Start is called before the first frame update
@@ -30,5 +36,20 @@ public class HUD : MonoBehaviour
     {
         menuScreen.DOScale(Vector3.one, .2f);
         AudioManager.Instance.PlaySFX("_btnPress");
+        AudioManager.Instance.StopMusic();
+    }
+
+    void UpdateScoreUI(int score)
+    {
+        scoreText.text = "Score: "+ score;
+    }
+
+      void UpdateMacthUI(int match)
+    {
+         matchText.text = "Score: "+ match;
+    }
+      void UpdateTurnUI(int turn)
+    {
+         trunText.text = "Score: "+ turn;
     }
 }

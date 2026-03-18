@@ -100,4 +100,15 @@ public class PersistentDataManager : MonoBehaviour
         Data.isMuted = mute;
         Save();
     }
+
+    public bool GetMuteState()
+    {
+        return Data.isMuted;
+    }
+
+    public void SetMuteState(bool mute)
+    {
+        Data.isMuted = mute;
+        Save();
+    }
 }

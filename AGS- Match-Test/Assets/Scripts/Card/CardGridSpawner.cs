@@ -5,6 +5,7 @@ using System.Collections;
 
 public class CardGridSpawner : MonoBehaviour
 {
+    public static CardGridSpawner Instance;
     public int rows = 4;
     public int columns = 4;
     [Header("Container Size")]
@@ -14,17 +15,16 @@ public class CardGridSpawner : MonoBehaviour
     [Header("Spacing")]
     public float spacing = 0.2f;
 
+    [Header("Card Database")]
     public CardDatabase database;
     public CardCategory selectedCategory;
     List<CardItem> selectedCards;
-
-    List<GameObject> activeCards = new List<GameObject>();
-
-    void Start()
+    List<CardView> activeCards = new List<CardView>();
+    IEnumerator flipAllTheCard;
+    void Awake()
     {
-        
+        Instance = this;
     }
-
    public void ApplyDifficultyToGrid()
     {
         switch (PersistentDataManager.Instance.GetDifficulty())
@@ -88,8 +88,7 @@ public class CardGridSpawner : MonoBehaviour
                     startY - r * (cardSize + spacing),
                     0
                 );
-
-                GameObject card = CardPool.Instance.GetCard();
+                CardView card = CardPool.Instance.Get();
                 card.transform.SetParent(transform);
                 card.transform.localPosition = pos;
 
@@ -98,20 +97,24 @@ public class CardGridSpawner : MonoBehaviour
                 CardView view = card.GetComponent<CardView>();
                 view.Setup(finalList[index]);
                 activeCards.Add(card);
-
                 index++;
             }
         }
-
-        StartCoroutine(PreviewAndHideCards());
+        
+        if (flipAllTheCard != null)
+        {
+            StopCoroutine(flipAllTheCard);
+        }
+        flipAllTheCard = PreviewAndHideCards();
+        StartCoroutine(flipAllTheCard);
     }
     
 
-    void ClearGrid()
+  public  void ClearGrid()
     {
         foreach (var card in activeCards)
         {
-            CardPool.Instance.ReturnCard(card);
+            CardPool.Instance.ReturnToPool(card);
         }
 
         activeCards.Clear();
@@ -148,7 +151,7 @@ IEnumerator PreviewAndHideCards()
             view.Flip();
     }
 
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(2f);
 
     foreach (var card in activeCards)
     {
